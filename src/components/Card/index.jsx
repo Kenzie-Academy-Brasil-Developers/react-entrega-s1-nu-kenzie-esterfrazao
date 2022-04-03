@@ -20,9 +20,10 @@ function Card({ transaction, callback }) {
         <span className="transactionType">{type}</span>
       </div>
       <span>{formatter.format(Math.abs(value))}</span>
-      <button onClick={() => callback(transaction)} className="trashCan">
-        Apagar
-      </button>
+      <button
+        onClick={() => callback(transaction)}
+        className="trashCan"
+      ></button>
     </div>
   );
 }

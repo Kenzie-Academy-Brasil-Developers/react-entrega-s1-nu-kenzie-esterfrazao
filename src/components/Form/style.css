@@ -1,13 +1,77 @@
-form {
-    width:200px;
-    height: 400px;
+/*GERAIS*/
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/*FORM*/
+.transactionForm {
+    width: 95vw;
+    height: 351px;
+    max-width: 363px;
 
     display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
+
+    border: 1px solid #E9ECEF;
+    border-radius: 4px;
+
+    margin: 15px;
+    padding:24.5px;
+
+    font-family: 'Inter';
 }
-form>input, form>select {
-    padding: 5px;
-    border:none;
+.transactionForm input, .transactionForm select {
+    padding: 12px 16px;
+
+    border:1px solid #F8F9FA;
+
+    background-color: #F8F9FA;
+    color:#868E96;
+
+    font-family: 'Inter';
+}
+
+.transactionForm input:hover, .transactionForm select:hover {
+    border: 1px solid #212529;
+}
+
+.transactionForm input {
+    font-size:16px;
+}
+
+.transactionForm select {
+    font-size: 14px;
+}
+
+.transactionForm span {
+    color:#868E96;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.transactionForm button {
+    background-color: #FD3773;
+    color: #FFFFFF;
+
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.transactionForm button:hover {
+    background-color: #E34981;
+    cursor: pointer;
+}
+
+.valueTypeDiv {
+    display: flex;
+    justify-content: space-between;
+
+    width: 95%;
+}
+
+.minorDivs{
+    display:flex;
+    flex-direction:column;
+
+    width: 48%;
 }

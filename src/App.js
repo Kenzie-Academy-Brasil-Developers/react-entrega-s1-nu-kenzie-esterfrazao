@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
-import Form from './components/Form';
-import List from './components/List';
-import TotalMoney from './components/TotalMoney';
+import MainPage from './MainPage'
+import InicialPage from './InicialPage';
 
 function App() {
 
-  const [listTransactions, setListTransactions] = useState([])
+  const [inicialPage, setInicialPage] = useState(true)
 
+  const changePage = () => {
+    inicialPage? setInicialPage(false) : setInicialPage(true);
+  }
+  
   return (
-    <main className="App">
-      <header>
-      </header>
-      <div>
-        <Form list={listTransactions} setList={setListTransactions} />
-        <TotalMoney list={listTransactions}/>
-      </div>
-      <List list={listTransactions} setList={setListTransactions} />
-    </main>
+    <>
+      {inicialPage ? <InicialPage callback={changePage}/> : <MainPage callback={changePage}/>}
+    </>
   );
 }
 
