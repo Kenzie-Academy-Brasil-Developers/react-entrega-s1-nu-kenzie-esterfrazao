@@ -16,11 +16,11 @@ function MainPage({ callback }) {
         </button>
       </header>
       <main className="main">
-        <div>
+        <section className="transactionsInfo">
           <Form list={listTransactions} setList={setListTransactions} />
           <TotalMoney list={listTransactions} />
-        </div>
-        <section>
+        </section>
+        <section className="listSection">
           <div className="listHeader">
             <h3>Resumo financeiro</h3>
             <button className="unactiveButton">Todos</button>

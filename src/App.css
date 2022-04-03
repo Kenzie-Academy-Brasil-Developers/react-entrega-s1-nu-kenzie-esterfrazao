@@ -65,12 +65,20 @@ button {
   align-items: center;
 }
 
+.transactionsInfo {
+  width: 100%;
+}
+
 /* LIST */
+.listSection {
+  width: 99%;
+}
+
 .listHeader {
   display:flex;
   justify-content: space-between;
 
-  width: 95vw;
+  width: 98%;
 
   padding: 10px;
 }
@@ -94,8 +102,31 @@ button {
   text-align: start;
 }
 
+
+
 @media screen and (min-width: 426px){
   .main{
     flex-direction: row;
+  }
+
+  .transactionsInfo {
+    width: 48%;
+    margin-right: 20px;
+  }
+
+  .listSection {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:769px){
+  .main{
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .transactionsInfo {
+    width: 36%;
+    margin-right: 20px;
   }
 }

@@ -1,3 +1,59 @@
+.transactionCard {
+    width: 98%;
+    height: 87px;
+
+    padding: 15px 10px;
+    margin: 12px 0;
+    
+    background-color: #F8F9FA;
+
+    border-radius: 4px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.greenBorderCard {
+    border-left: 4px solid #03B898;
+}
+
+.grayBorderCard {
+    border-left: 4px solid #E9ECEF;
+}
+
+.transactionCard span {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 12px;
+
+}
+
+.transactionType {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 12px;
+    color: #868E96;
+}
+
 .trashCan {
-    content: url('https://api.iconify.design/fa-solid/trash.svg?color=%23868e96');
+    color: #868E96;
+    padding:7px;
+
+    position: relative;
+    right: 6px;
+    bottom: 8px;
+}
+
+.trashCan:hover {
+    background-color: #868E96;
+    color:#F8F9FA;
+}
+
+@media screen and (min-width:426px) {
+    .trashCan {
+        padding: 15px;
+    }
 }

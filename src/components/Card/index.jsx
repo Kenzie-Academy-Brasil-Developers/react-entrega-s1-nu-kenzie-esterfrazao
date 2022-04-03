@@ -1,4 +1,5 @@
 import "./style.css";
+import { Icon } from "@iconify/react";
 
 function Card({ transaction, callback }) {
   const { description, value, type } = transaction;
@@ -10,7 +11,7 @@ function Card({ transaction, callback }) {
   return (
     <div
       className={
-        type === "Depesa"
+        type === "Despesa"
           ? "transactionCard grayBorderCard"
           : "transactionCard greenBorderCard"
       }
@@ -20,10 +21,9 @@ function Card({ transaction, callback }) {
         <span className="transactionType">{type}</span>
       </div>
       <span>{formatter.format(Math.abs(value))}</span>
-      <button
-        onClick={() => callback(transaction)}
-        className="trashCan"
-      ></button>
+      <button className="trashCan" onClick={() => callback(transaction)}>
+        <Icon icon="fa-solid:trash" />
+      </button>
     </div>
   );
 }

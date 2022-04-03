@@ -8,7 +8,7 @@ function List({ list, setList }) {
   };
 
   return (
-    <div>
+    <div className="cardsList">
       {list.map((item, index) => (
         <Card key={index} transaction={item} callback={eraseFromList} />
       ))}

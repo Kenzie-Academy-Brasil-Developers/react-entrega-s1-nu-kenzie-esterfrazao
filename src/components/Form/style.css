@@ -3,9 +3,8 @@
 
 /*FORM*/
 .transactionForm {
-    width: 95vw;
+    width: 98%;
     height: 351px;
-    max-width: 363px;
 
     display:flex;
     flex-direction: column;
