@@ -4,7 +4,7 @@ class Transaction {
   constructor(description, type, value) {
     this.description = description;
     this.type = type;
-    this.value = Number(value);
+    this.value = Number(type === "Despesa" ? -value : value);
   }
 }
 
@@ -34,14 +34,14 @@ function Form({ list, setList }) {
         id="description"
         placeholder="Digite aqui sua descrição"
       />
-      <small>Ex: Compra de roupas</small>
+      <span>Ex: Compra de roupas</span>
       <div>
         <label htmlFor="value">Valor</label>
         <input type="text" id="value" placeholder="1 R$" />
         <label htmlFor="tipo-valor">Tipo de valor</label>
         <select id="tipo-valor">
           <option value="Entrada">Entrada</option>
-          <option value="Saída">Saída</option>
+          <option value="Despesa">Saída</option>
         </select>
       </div>
       <button type="submit">Inserir valor</button>

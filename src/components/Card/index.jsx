@@ -8,12 +8,18 @@ function Card({ transaction, callback }) {
   });
 
   return (
-    <div className="transactionCard">
+    <div
+      className={
+        type === "Depesa"
+          ? "transactionCard grayBorderCard"
+          : "transactionCard greenBorderCard"
+      }
+    >
       <div>
         <h3>{description}</h3>
         <span className="transactionType">{type}</span>
       </div>
-      <span>{formatter.format(value)}</span>
+      <span>{formatter.format(Math.abs(value))}</span>
       <button onClick={() => callback(transaction)} className="trashCan">
         Apagar
       </button>

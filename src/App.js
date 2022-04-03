@@ -1,20 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react'
-import Form from './components/Form'
-import List from './components/List'
+import {useState} from 'react';
+import Form from './components/Form';
+import List from './components/List';
+import TotalMoney from './components/TotalMoney';
 
 function App() {
 
   const [listTransactions, setListTransactions] = useState([])
 
   return (
-    <div className="App">
+    <main className="App">
       <header>
       </header>
-      <Form list={listTransactions} setList={setListTransactions} />
+      <div>
+        <Form list={listTransactions} setList={setListTransactions} />
+        <TotalMoney list={listTransactions}/>
+      </div>
       <List list={listTransactions} setList={setListTransactions} />
-    </div>
+    </main>
   );
 }
 
