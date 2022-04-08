@@ -18,7 +18,7 @@
 
     font-family: 'Inter';
 }
-.transactionForm input, .transactionForm select {
+.transactionForm input, .transactionForm select, .inputValue {
     padding: 12px 16px;
 
     border:1px solid #F8F9FA;
@@ -29,7 +29,7 @@
     font-family: 'Inter';
 }
 
-.transactionForm input:hover, .transactionForm select:hover {
+.transactionForm input:hover, .transactionForm select:hover, .inputValue:hover {
     border: 1px solid #212529;
 }
 
@@ -67,6 +67,36 @@
 
     width: 95%;
 }
+
+.inputValue{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputValue input {
+    padding: 0;
+    border:none;
+    background:transparent;
+    color:inherit;
+    width: 70%;
+}
+
+.inputValue input:hover{
+    border: none;
+}
+
+.inputValue input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.inputValue p {
+    color:#5B6166;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 
 .minorDivs{
     display:flex;

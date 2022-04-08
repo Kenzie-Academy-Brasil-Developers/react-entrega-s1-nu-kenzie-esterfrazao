@@ -1,0 +1,61 @@
+.emptyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 94%;
+    height: 400px;
+    
+    margin: 0 3%;
+}
+
+.emptyList h2 {
+    color:#5B6166;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.nullTransaction {
+    width: 100%;
+    height: 89px;
+
+    background: #F8F9FA;
+
+    border-left: 2px solid #E9ECEF;
+    border-radius: 4px;
+
+    padding: 24px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nullDescription, .nullDetail {
+    height: 13.2px;
+    background-color: #E9ECEF;
+}
+
+.nullDescription {
+    width:79%;
+}
+
+.nullDetail {
+    width:76.27px;
+}
+
+@media screen and (min-width: 426px) {
+    .emptyList {
+        max-width: 562px;
+    }
+    .nullTransaction {
+        max-width: 562px;
+    }
+
+    .nullDescription {
+        max-width:330.18px;
+    }
+    
+}

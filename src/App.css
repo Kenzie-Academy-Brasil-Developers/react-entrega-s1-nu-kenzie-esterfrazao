@@ -48,7 +48,7 @@ button {
   cursor: pointer;
 }
 
-.unactiveButton:active {
+.unactiveButton:focus {
   background-color: #FD377E;
   color: #FFFFFF;
 }
@@ -62,23 +62,21 @@ button {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .transactionsInfo {
-  width: 100%;
+  width: 95%;
 }
 
 /* LIST */
 .listSection {
-  width: 99%;
+  width: 100%;
 }
 
 .listHeader {
   display:flex;
-  justify-content: space-between;
-
-  width: 98%;
+  justify-content: space-between;  
+  align-items: center;
 
   padding: 10px;
 }
@@ -103,10 +101,23 @@ button {
 }
 
 
+.buttonsList {
+  width:50%;
+  
+  display: flex;
+  justify-content: space-around;
+
+  box-sizing: content-box;
+}
 
 @media screen and (min-width: 426px){
   .main{
     flex-direction: row;
+  }
+
+  .mainHeader {
+    justify-content: space-between;
+    padding: 0 10vw;
   }
 
   .transactionsInfo {
@@ -117,16 +128,42 @@ button {
   .listSection {
     width: 50%;
   }
+  
+  .listHeader .unactiveButton {
+    height: 40px;
+    box-sizing: content-box;
+    max-width: 69px;
+    padding: 0px 12px;
+    text-align: center;
+  }
+
+  .filtrarTodos {
+    padding: 10.5px 15px;
+  }
+
+  .filtrarDespesas {
+    width: 92px;
+  }
 }
 
 @media screen and (min-width:769px){
   .main{
     justify-content: space-around;
-    align-items: center;
+    width: 86vw;
+    margin:10px auto;
+  }
+
+  .mainHeader {
+    padding:0 12vw;
   }
 
   .transactionsInfo {
-    width: 36%;
-    margin-right: 20px;
+    max-width: 363px;
+    margin-right: 2.5vw;
   }
+
+}
+
+@media screen and (min-width:) {
+  
 }

@@ -1,35 +1,45 @@
+import { useState } from "react";
 import "./style.css";
 
-class Transaction {
-  constructor(description, type, value) {
-    this.description = description;
-    this.type = type;
-    this.value = Number(type === "Despesa" ? -value : value);
-  }
-}
-
 function Form({ list, setList }) {
+  const [description, setDescription] = useState("");
+  const [type, setType] = useState("Entrada");
+  const [value, setValue] = useState(0);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const info = [];
-    const tipo = event.target.querySelector("select").value;
 
-    for (let i = 0; i < event.target.length; i++) {
-      if (event.target[i].tagName === "INPUT") {
-        info.push(event.target[i].value);
-      }
+    const transaction = {};
+
+    transaction.description = description;
+    transaction.type = type;
+    transaction.value = type === "Despesa" ? -value : value;
+
+    setList([...list, transaction]);
+  };
+
+  const captureData = (e) => {
+    switch (e.target.id) {
+      case "description":
+        setDescription(e.target.value);
+        break;
+      case "value":
+        setValue(e.target.value);
+        break;
+      case "type":
+        setType(e.target.value);
+        break;
+
+      default:
+        break;
     }
-    const [descricao, valor] = info;
-
-    const newTransaction = new Transaction(descricao, tipo, valor);
-
-    setList([...list, newTransaction]);
   };
 
   return (
     <form className="transactionForm" onSubmit={handleSubmit}>
       <label htmlFor="description">Descrição</label>
       <input
+        onChange={captureData}
         type="text"
         id="description"
         placeholder="Digite aqui sua descrição"
@@ -38,11 +48,20 @@ function Form({ list, setList }) {
       <div className="valueTypeDiv">
         <div className="minorDivs">
           <label htmlFor="value">Valor</label>
-          <input type="text" id="value" placeholder="1                 R$" />
+          <div className="inputValue">
+            <input
+              onChange={captureData}
+              step="0.01"
+              type="number"
+              id="value"
+              placeholder="1"
+            />
+            <p>R$</p>
+          </div>
         </div>
         <div className="minorDivs">
-          <label htmlFor="tipo-valor">Tipo de valor</label>
-          <select id="tipo-valor">
+          <label htmlFor="type">Tipo de valor</label>
+          <select onChange={captureData} id="type">
             <option value="Entrada">Entrada</option>
             <option value="Despesa">Saída</option>
           </select>

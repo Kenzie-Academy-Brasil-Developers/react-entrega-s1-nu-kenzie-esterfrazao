@@ -1,3 +1,5 @@
+import "./inicialPage.css";
+
 function InicialPage({ callback }) {
   return (
     <>

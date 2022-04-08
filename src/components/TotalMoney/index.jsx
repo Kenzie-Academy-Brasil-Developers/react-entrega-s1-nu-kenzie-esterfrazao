@@ -2,7 +2,8 @@ import "./style.css";
 
 function TotalMoney({ list }) {
   const total = list.reduce((previous, current) => {
-    return current.value + previous;
+    console.log(typeof current.value);
+    return Number(current.value) + previous;
   }, 0);
 
   const formatter = new Intl.NumberFormat("pt-BR", {
