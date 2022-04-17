@@ -46,6 +46,7 @@
     width:76.27px;
 }
 
+/*Media Queries*/
 @media screen and (min-width: 426px) {
     .emptyList {
         max-width: 562px;

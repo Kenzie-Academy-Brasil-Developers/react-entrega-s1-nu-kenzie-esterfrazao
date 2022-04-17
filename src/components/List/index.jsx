@@ -1,8 +1,8 @@
 import "./style.css";
 import Card from "../Card";
 
-function List({ list, setList }) {
-  const eraseFromList = (item) => {
+const List = ({ list, setList }) => {
+  const deleteItem = (item) => {
     const newList = list.filter((elem) => elem !== item);
     setList(newList);
   };
@@ -10,10 +10,10 @@ function List({ list, setList }) {
   return (
     <div className="cardsList">
       {list.map((item, index) => (
-        <Card key={index} transaction={item} callback={eraseFromList} />
+        <Card key={index} transaction={item} deleteItem={deleteItem} />
       ))}
     </div>
   );
-}
+};
 
 export default List;

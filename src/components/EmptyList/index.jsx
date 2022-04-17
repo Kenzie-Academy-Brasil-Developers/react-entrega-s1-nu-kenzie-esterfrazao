@@ -1,6 +1,6 @@
 import "./style.css";
 
-function EmptyList() {
+const EmptyList = () => {
   return (
     <div className="emptyList">
       <h2>Você ainda não possui nenhum lançamento</h2>
@@ -18,6 +18,6 @@ function EmptyList() {
       </div>
     </div>
   );
-}
+};
 
 export default EmptyList;

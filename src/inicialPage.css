@@ -1,3 +1,4 @@
+/*Background*/
 .inicialPage {
     width:100vw;
     height:100vh;
@@ -21,9 +22,12 @@
     padding-left: 15%;
 }
 
+/*Imagem de Capa*/
 .capa {
     display:none
 }
+
+/*Texto de apresentação*/
 
 .logo {
     width: 100%;
@@ -62,6 +66,8 @@
     background-color: #FD377E;
     color:inherit;
 }
+
+/*Media Queries*/
 
 @media screen and (min-width:426px) {
     .capa {

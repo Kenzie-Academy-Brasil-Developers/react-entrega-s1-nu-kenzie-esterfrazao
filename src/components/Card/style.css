@@ -52,6 +52,7 @@
     color:#F8F9FA;
 }
 
+/*Media Queries*/
 @media screen and (min-width:426px) {
     .trashCan {
         padding: 15px;

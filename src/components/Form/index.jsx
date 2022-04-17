@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./style.css";
 
-function Form({ list, setList }) {
-  const [description, setDescription] = useState("");
+const Form = ({ list, setList }) => {
+  const [description, setDescription] = useState("Sem Descrição");
   const [type, setType] = useState("Entrada");
   const [value, setValue] = useState(0);
 
@@ -18,28 +18,11 @@ function Form({ list, setList }) {
     setList([...list, transaction]);
   };
 
-  const captureData = (e) => {
-    switch (e.target.id) {
-      case "description":
-        setDescription(e.target.value);
-        break;
-      case "value":
-        setValue(e.target.value);
-        break;
-      case "type":
-        setType(e.target.value);
-        break;
-
-      default:
-        break;
-    }
-  };
-
   return (
     <form className="transactionForm" onSubmit={handleSubmit}>
       <label htmlFor="description">Descrição</label>
       <input
-        onChange={captureData}
+        onChange={(e) => setDescription(e.target.value)}
         type="text"
         id="description"
         placeholder="Digite aqui sua descrição"
@@ -50,7 +33,7 @@ function Form({ list, setList }) {
           <label htmlFor="value">Valor</label>
           <div className="inputValue">
             <input
-              onChange={captureData}
+              onChange={(e) => setValue(e.target.value)}
               step="0.01"
               type="number"
               id="value"
@@ -61,7 +44,7 @@ function Form({ list, setList }) {
         </div>
         <div className="minorDivs">
           <label htmlFor="type">Tipo de valor</label>
-          <select onChange={captureData} id="type">
+          <select onChange={(e) => setType(e.target.value)} id="type">
             <option value="Entrada">Entrada</option>
             <option value="Despesa">Saída</option>
           </select>
@@ -70,6 +53,6 @@ function Form({ list, setList }) {
       <button type="submit">Inserir valor</button>
     </form>
   );
-}
+};
 
 export default Form;

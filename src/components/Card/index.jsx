@@ -1,8 +1,9 @@
 import "./style.css";
 import { Icon } from "@iconify/react";
 
-function Card({ transaction, callback }) {
+const Card = ({ transaction, deleteItem }) => {
   const { description, value, type } = transaction;
+
   const formatter = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -21,11 +22,11 @@ function Card({ transaction, callback }) {
         <span className="transactionType">{type}</span>
       </div>
       <span>{formatter.format(Math.abs(value))}</span>
-      <button className="trashCan" onClick={() => callback(transaction)}>
+      <button className="trashCan" onClick={() => deleteItem(transaction)}>
         <Icon icon="fa-solid:trash" />
       </button>
     </div>
   );
-}
+};
 
 export default Card;

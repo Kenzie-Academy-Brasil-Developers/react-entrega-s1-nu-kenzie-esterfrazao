@@ -1,21 +1,26 @@
-import './App.css';
-import {useState} from 'react';
-import MainPage from './MainPage'
-import InicialPage from './InicialPage';
+import "./App.css";
 
-function App() {
+import { useState } from "react";
 
-  const [inicialPage, setInicialPage] = useState(true)
+import MainPage from "./MainPage";
+import InicialPage from "./InicialPage";
+
+const App = () => {
+  const [inicialPage, setInicialPage] = useState(true);
 
   const changePage = () => {
-    inicialPage? setInicialPage(false) : setInicialPage(true);
-  }
-  
+    inicialPage ? setInicialPage(false) : setInicialPage(true);
+  };
+
   return (
     <>
-      {inicialPage ? <InicialPage callback={changePage}/> : <MainPage callback={changePage}/>}
+      {inicialPage ? (
+        <InicialPage changePage={changePage} />
+      ) : (
+        <MainPage changePage={changePage} />
+      )}
     </>
   );
-}
+};
 
 export default App;
