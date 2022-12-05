@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import MainPage from "./MainPage";
 import InicialPage from "./InicialPage";
+import GlobalStyle from "./styles/global";
 
 const App = () => {
   const [inicialPage, setInicialPage] = useState(true);
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       {inicialPage ? (
         <InicialPage changePage={changePage} />
       ) : (
