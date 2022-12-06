@@ -2,8 +2,8 @@ import "./App.css";
 
 import { useState } from "react";
 
-import MainPage from "./MainPage";
-import InicialPage from "./InicialPage";
+import MainPage from "./pages/mainPage";
+import InicialPage from "./pages/initialPage";
 import GlobalStyle from "./styles/global";
 
 const App = () => {
